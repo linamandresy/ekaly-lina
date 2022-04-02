@@ -4,5 +4,8 @@
   "private": true,
   "scripts": {
     "start": "npm run build --prefix app && npm start --prefix server"
+  },
+  "devDependencies": {
+    "@angular/cli": "^13.3.1"
   }
 }
