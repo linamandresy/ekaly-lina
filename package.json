@@ -1,0 +1,8 @@
+{
+  "name": "m1p9mean",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run build --prefix app && npm start --prefix server"
+  }
+}
