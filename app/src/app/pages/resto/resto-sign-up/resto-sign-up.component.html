@@ -1,0 +1,35 @@
+<div class="main">
+	<img src="/assets/img/logo-ekaly.png" alt="E-Kaly.com">
+	<mat-card class="signup-card">
+		<mat-card-header class="signup-header">
+			<mat-card-title>Enregistrez votre restaurant</mat-card-title>
+		</mat-card-header>
+		<mat-divider inset></mat-divider>
+		<mat-card-content class="signup-form">
+			<div class="form-input">
+				<mat-form-field appearance="standard">
+					<mat-label>Nom du restaurant</mat-label>
+					<input matInput placeholder="Mon restaurant">
+					<mat-icon matSuffix>home</mat-icon>
+				</mat-form-field>
+			</div>
+			<div class="form-input">
+				<mat-form-field appearance="standard">
+					<mat-label>Saisissez votre mot de passe</mat-label>
+					<input matInput [type]="hide ? 'password' : 'text'">
+					<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+					  <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+					</button>
+				  </mat-form-field>
+			</div>
+		</mat-card-content>
+		<mat-card-actions>
+			<button mat-raised-button class="signup-button">Inscrire votre restaurant</button>
+			<br/>
+		</mat-card-actions>
+		<small>
+			Votre restaurant est déjà inscrit ?
+			<a [routerLink]="['/resto/login']" class="redirect">Connectez vous</a>
+		</small>
+	</mat-card>
+</div>
