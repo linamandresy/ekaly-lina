@@ -8,15 +8,15 @@
 		<mat-card-content class="login-form">
 			<div class="form-input">
 				<mat-form-field appearance="standard">
-					<mat-label>Identifiant du restaurant</mat-label>
-					<input matInput placeholder="restaurant@exemple.com">
-					<mat-icon matSuffix>home</mat-icon>
+					<mat-label>Adresse email</mat-label>
+					<input matInput placeholder="restaurant@exemple.com" [(ngModel)]="email" type="email">
+					<mat-icon matSuffix>alternate_email</mat-icon>
 				</mat-form-field>
 			</div>
 			<div class="form-input">
 				<mat-form-field appearance="standard">
-					<mat-label>Enter your password</mat-label>
-					<input matInput [type]="hide ? 'password' : 'text'">
+					<mat-label>Mot de passe</mat-label>
+					<input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
 					<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
 					  <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
 					</button>
@@ -24,7 +24,7 @@
 			</div>
 		</mat-card-content>
 		<mat-card-actions>
-			<button mat-raised-button class="login-button">Se Connecter</button>
+			<button mat-raised-button class="login-button" (click)="login()">Se Connecter</button>
 			<br/>
 		</mat-card-actions>
 		<small>

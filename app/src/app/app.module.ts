@@ -16,6 +16,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { PageLoaderComponent } from './component/page-loader/page-loader.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,12 +25,15 @@ import { PageLoaderComponent } from './component/page-loader/page-loader.compone
     LoginComponent,
     RestoSignUpComponent,
     RestoLogInComponent,
-    PageLoaderComponent
+    PageLoaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+	FormsModule,
+	ReactiveFormsModule,
+	HttpClientModule,
 	MatCardModule,
 	MatDividerModule,
 	MatButtonModule,

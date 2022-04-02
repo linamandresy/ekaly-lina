@@ -16,6 +16,10 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		.login-header{
+			color:#996a42;
+			font-size: 35px!important;
+		}
 		.login-button{
 			background-color: #996a42;
 			color:#ffffff;

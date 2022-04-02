@@ -9,14 +9,21 @@
 			<div class="form-input">
 				<mat-form-field appearance="standard">
 					<mat-label>Nom du restaurant</mat-label>
-					<input matInput placeholder="Mon restaurant">
+					<input matInput placeholder="Mon restaurant" [(ngModel)]="name">
 					<mat-icon matSuffix>home</mat-icon>
 				</mat-form-field>
 			</div>
 			<div class="form-input">
 				<mat-form-field appearance="standard">
-					<mat-label>Saisissez votre mot de passe</mat-label>
-					<input matInput [type]="hide ? 'password' : 'text'">
+					<mat-label>Adresse email</mat-label>
+					<input matInput placeholder="restaurant@exemple.com" [(ngModel)]="email">
+					<mat-icon matSuffix>alternate_email</mat-icon>
+				</mat-form-field>
+			</div>
+			<div class="form-input">
+				<mat-form-field appearance="standard">
+					<mat-label>Mot de passe</mat-label>
+					<input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
 					<button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
 					  <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
 					</button>
@@ -24,7 +31,7 @@
 			</div>
 		</mat-card-content>
 		<mat-card-actions>
-			<button mat-raised-button class="signup-button">Inscrire votre restaurant</button>
+			<button mat-raised-button class="signup-button" (click)="signup()">Inscrire votre restaurant</button>
 			<br/>
 		</mat-card-actions>
 		<small>
