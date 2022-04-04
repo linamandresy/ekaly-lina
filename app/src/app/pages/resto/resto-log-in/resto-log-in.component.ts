@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RestoLoginService } from 'src/app/services/resto/resto-login.service';
 
 @Component({
@@ -11,8 +12,10 @@ export class RestoLogInComponent implements OnInit {
 	hide:boolean=true;
 	email:string='';
 	password:string='';
+	error:string='';
 	constructor(
-		private loginService:RestoLoginService
+		private loginService:RestoLoginService,
+		private router:Router
 	) { }
 
 	ngOnInit(): void {
@@ -20,9 +23,14 @@ export class RestoLogInComponent implements OnInit {
 	login():void {
 		this.loginService.login(this.email,this.password).subscribe(
 			(data)=>{
-				console.log({"data":data})
+				if(data.ok){
+					sessionStorage.setItem("token",data.token);
+					this.router.navigate(['/resto/accueil'])
+				}else{
+					this.error=data.error;
+				}
 			},(error)=>{
-				console.log({"error":error})
+				this.router.navigate(['/error']);
 			}
 		)
 	}

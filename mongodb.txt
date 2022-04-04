@@ -1,0 +1,1 @@
+db.users.createIndex({"_email":1},{unique:true});

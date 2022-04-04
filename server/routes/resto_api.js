@@ -3,27 +3,28 @@ const express = require("express");
 const router = express.Router();
 const Resto = require('../model/Resto');
 
-router.post("/login",(req,res,next)=>{
-	res.send({
-		status:200,
-		message:"Vous etres bien connecté",
-		token:"qlhqjshdlkqjhdlqkjshdlqkjhdqlkjdhqlkjhdqlkjhlq"
-	});
+router.post("/login",async (req,res,next)=>{
+	
+	try {
+		console.log(req.body);
+		let resto = new Resto(req.body);
+		let token =await resto.login();
+		console.log(token);
+		res.send({ok:true,token:token});
+	} catch (error) {
+		res.send({ok:false,error:error.message});
+	}
 });
 
-router.post("/signup",(req,res,next)=>{
+router.post("/signup",async (req,res,next)=>{
 	try{
 
 		let resto = new Resto(req.body);
-		resto.signup();
-		console.log(resto);
-		res.send({
-			status:200,
-			message:"Félicitation pour votre inscription",
-			token:"zeazjheglaglsdjfsldjfhsldkjfhlsjfhdskfhdlsfhslsl"
-		});
+		await resto.signup();
+		let token = await resto.login();
+		res.send({ok:true,token:token});
 	}catch(error){
-		console.log(error);
+		res.send({ok:false,error:error.message});
 	}
 });
 module.exports = router;

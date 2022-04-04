@@ -18,6 +18,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { PageLoaderComponent } from './component/page-loader/page-loader.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RestoAccueilComponent } from './pages/resto/resto-accueil/resto-accueil.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     RestoSignUpComponent,
     RestoLogInComponent,
     PageLoaderComponent,
+    RestoAccueilComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
