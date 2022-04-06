@@ -120,9 +120,24 @@
 			</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-				<i class="fas fa-th-large"></i>
-			</a>
+			<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+				<mat-icon>account_circle</mat-icon>
+			  </button>
+			  <mat-menu #menu="matMenu">
+				<button mat-menu-item routerLink="/resto/edit-profile">
+				  <mat-icon>edit</mat-icon>
+				  <span>Editer mon resto</span>
+				</button>
+				<button mat-menu-item>
+				  <mat-icon>card_membership</mat-icon>
+				  <span>Modifier mon abonnement</span>
+				</button>
+				<button mat-menu-item>
+				  <mat-icon>logout</mat-icon>
+				  <span>Me déconnecter</span>
+				</button>
+			  </mat-menu>
+			  
 		</li>
 	</ul>
 </nav>

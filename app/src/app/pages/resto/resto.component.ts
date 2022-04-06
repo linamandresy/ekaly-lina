@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./resto.component.scss']
 })
 export class RestoComponent implements OnInit {
-
 	constructor() { }
-
 	ngOnInit(): void {
 	}
 
