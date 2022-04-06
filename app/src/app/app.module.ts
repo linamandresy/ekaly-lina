@@ -20,6 +20,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RestoAccueilComponent } from './pages/resto/resto-accueil/resto-accueil.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { RestoComponent } from './pages/resto/resto.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { RestoHeaderComponent } from './pages/resto/component/resto-header/resto-header.component';
+import { RestoNavSideComponent } from './pages/resto/component/resto-nav-side/resto-nav-side.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +35,10 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     RestoLogInComponent,
     PageLoaderComponent,
     RestoAccueilComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    RestoComponent,
+    RestoHeaderComponent,
+    RestoNavSideComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +53,9 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 	MatProgressSpinnerModule,
 	MatFormFieldModule,
 	MatInputModule,
-	MatIconModule
+	MatIconModule,
+	MatToolbarModule,
+	MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

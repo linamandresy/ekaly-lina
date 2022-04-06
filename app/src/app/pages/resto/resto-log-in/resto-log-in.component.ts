@@ -24,7 +24,7 @@ export class RestoLogInComponent implements OnInit {
 		this.loginService.login(this.email,this.password).subscribe(
 			(data)=>{
 				if(data.ok){
-					sessionStorage.setItem("token",data.token);
+					sessionStorage.setItem("resto-token",data.token);
 					this.router.navigate(['/resto/accueil'])
 				}else{
 					this.error=data.error;
