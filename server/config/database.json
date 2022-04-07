@@ -1,5 +1,5 @@
 {
-	"uri": "mongodb://localhost:27017/ekaly",
+	"uri": "mongodb+srv://lina:cmcm@e-kaly-cluster0.zxfhu.mongodb.net/ekaly?retryWrites=true&w=majority",
 	"database":"ekaly",
 	"config": {}
 }
