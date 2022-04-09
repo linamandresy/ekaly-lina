@@ -1,0 +1,2 @@
+<input type="text" class="form-control" [(ngModel)]="placeName"  placeholder="Nom du quartier" (change)="showMap()">
+<div id="map-ol" class="map-ol" *ngIf="displayMap"></div>

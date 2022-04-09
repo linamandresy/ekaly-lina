@@ -4,10 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors");
+var fileupload = require("express-fileupload");
 
 var indexRouter = require('./routes/index');
 var restoApiRouter = require("./routes/resto_api");
-
+var uploaderApi = require("./routes/uploader_api");
 var app = express();
 
 // view engine setup
@@ -20,8 +21,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public/app')));
 app.use(cors());
+app.use(fileupload({
+	limits:{
+		fileSize: 50 * 1024 * 1024
+	}
+}))
 
 app.use("/api/resto",restoApiRouter);
+app.use('/api/file-upload',uploaderApi);
 app.use('/**', indexRouter);
 
 // catch 404 and forward to error handler

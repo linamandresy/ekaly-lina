@@ -1,3 +1,8 @@
 {
-	"session-validity":20
+	"session-validity":20,
+	"firebaseApiKey":"AIzaSyC3ZDRQBCbmhr4-6fy7ZVIyk7w4bWP0m8c",
+	"firebaseAuthDomain":"ekaly-cdn.firebaseapp.com",
+	"firebaseDatabaseUrl":"ekaly-cdn",
+	"firebaseStorageBucket":"ekaly-cdn.appspot.com",
+	"firebaseBucketStorageUrl":"gs://ekaly-cdn.appspot.com/"
 }

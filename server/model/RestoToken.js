@@ -2,7 +2,7 @@
 
 const config = require("../config/application.json");
 const configDB = require("../config/database.json");
-
+const executeDB = require("../database/MongoClient");
 class RestoToken {
 	constructor(token, idResto, expirationDate = new Date(new Date(Date.now()).getTime() + (config["session-validity"] * 60000))) {
 		this.token = token;
@@ -34,6 +34,7 @@ class RestoToken {
 			dbo.collection("restoToken").insertOne(this, (err, res) => { });
 			//db.close();
 		}
+		executeDB(action);
 	}
 }
 

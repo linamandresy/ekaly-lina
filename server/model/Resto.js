@@ -57,7 +57,6 @@ class Resto{
 				dbo.collection("users").findOne(cdt,(err,res)=>{
 					if(res===null) reject(new Error("Adresse email ou mot de passe invalide"));
 					else{
-
 						let token = Tokenizer.tokenize(`${res._id}`);
 						let restoToken = new RestoToken(token,res._id);
 						restoToken.save();

@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { LoginComponent } from './pages/login/login.component';
-import { EditRestoComponent } from './pages/resto/edit-resto/edit-resto.component';
 import { RestoAccueilComponent } from './pages/resto/resto-accueil/resto-accueil.component';
 import { RestoLogInComponent } from './pages/resto/resto-log-in/resto-log-in.component';
+import { RestoProfileComponent } from './pages/resto/resto-profile/resto-profile.component';
 import { RestoSignUpComponent } from './pages/resto/resto-sign-up/resto-sign-up.component';
 import { RestoComponent } from './pages/resto/resto.component';
 import { RestoAuthGuardService } from './services/resto/resto-auth-guard.service';
@@ -29,8 +29,8 @@ const routes: Routes = [{
 		component: RestoAccueilComponent,
 		canActivate: [RestoAuthGuardService]
 	}, {
-		path: 'edit-profile',
-		component: EditRestoComponent,
+		path: 'profile',
+		component: RestoProfileComponent,
 		canActivate: [RestoAuthGuardService]
 	}]
 }, {

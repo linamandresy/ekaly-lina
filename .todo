@@ -14,26 +14,26 @@ E-Kaly :
 		Restaurant:
 			✔ Inscrire le restaurant sur le site @started(22-04-02 23:08) @done(22-04-05 10:32) @lasted(2d11h24m11s)
 			✔ Connection du restaurant @started(22-04-02 14:54) @done(22-04-05 10:32) @lasted(2d19h38m12s)
-			- Navigation et design Restaurant @started(22-04-06 23:32)
+			✔ Navigation et design Restaurant @started(22-04-06 23:32) @done(22-04-09 21:31) @lasted(2d21h59m19s)
 			- Voir la liste des commandes à préparer
 			- Valider les paiement 
 			Edition de la page du restaurant :
-				- 1 photo de profile 
-				- 1 photo de couverture
-				- 1 nom de retsaurant
-				- 1 description moins de 500 caractere
-				- 1 numero de paiement MVola
-				- 1 Localisation Géographique : MAP ou geolocalisation télephone( longitude - latitude )
+				✔ 1 photo de profile @started(22-04-07 18:55) @done(22-04-09 21:31) @lasted(2d2h36m23s)
+				✔ 1 photo de couverture @started(22-04-07 18:55) @done(22-04-09 21:31) @lasted(2d2h36m24s)
+				✔ 1 nom de retsaurant @started(22-04-07 18:55) @done(22-04-09 21:31) @lasted(2d2h36m25s)
+				✔ 1 description moins de 500 caractere @started(22-04-07 18:55) @done(22-04-09 21:31) @lasted(2d2h36m26s)
+				✔ 1 numero de paiement MVola @started(22-04-07 18:55) @done(22-04-09 21:31) @lasted(2d2h36m26s)
+				✔ 1 Localisation Géographique : MAP ou geolocalisation télephone( longitude - latitude ) @started(22-04-07 18:55) @done(22-04-09 21:31) @lasted(2d2h36m29s)
 			Ajout de nouveaux plat : 
 				- 1 photo miniature
 				- 1 photo baniere
 				- 1 nom de plat 
 				- 1 description moins de 500 caractere
 				- 1 prix en ariary
-			- Voir la liste des plats @started(22-04-06 23:35)
-			- Voir la fiche des plats avec commentaires @started(22-04-06 23:35)
-			- Liste des commandes prêt à être livrée @started(22-04-06 23:35)
-			- Imprimer QR Code de livraison à mettre sur le paquet @started(22-04-06 23:35)
+			✘ Voir la liste des plats @started(22-04-06 23:35) @cancelled(22-04-07 18:55) @wasted(19h20m35s)
+			✘ Voir la fiche des plats avec commentaires @started(22-04-06 23:35) @cancelled(22-04-07 18:55) @wasted(19h20m35s)
+			✘ Liste des commandes prêt à être livrée @started(22-04-06 23:35) @cancelled(22-04-07 18:55) @wasted(19h20m36s)
+			✘ Imprimer QR Code de livraison à mettre sur le paquet @started(22-04-06 23:35) @cancelled(22-04-07 18:55) @wasted(19h20m37s)
 			- Voir le chiffre d'affaire du restaurant
 			- Voir les bénéfices du restaurant
 			- Prévisions des activités (Analyse de données)

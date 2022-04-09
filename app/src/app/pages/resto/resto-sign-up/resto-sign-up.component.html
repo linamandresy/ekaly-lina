@@ -3,6 +3,7 @@
 	<mat-card class="signup-card">
 		<mat-card-header class="signup-header">
 			<mat-card-title>Enregistrez votre restaurant</mat-card-title>
+			<mat-spinner *ngIf="!hideLoader" diameter="30"></mat-spinner>
 		</mat-card-header>
 		<mat-divider inset></mat-divider>
 		<mat-card-content class="signup-form">
@@ -31,7 +32,9 @@
 			</div>
 		</mat-card-content>
 		<mat-card-actions>
-			<button mat-raised-button class="signup-button" (click)="signup()">Inscrire votre restaurant</button>
+			<button mat-raised-button class="signup-button" (click)="signup()"  [disabled]="!hideLoader" [ngClass]="!hideLoader?'disabled':''">
+				Inscrire votre restaurant
+			</button>
 			<br/>
 		</mat-card-actions>
 		<small>

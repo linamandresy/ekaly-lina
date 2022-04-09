@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditRestoComponent } from './edit-resto.component';
+import { RestoEditProfileComponent } from './resto-edit-profile.component';
 
-describe('EditRestoComponent', () => {
-  let component: EditRestoComponent;
-  let fixture: ComponentFixture<EditRestoComponent>;
+describe('RestoEditProfileComponent', () => {
+  let component: RestoEditProfileComponent;
+  let fixture: ComponentFixture<RestoEditProfileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditRestoComponent ]
+      declarations: [ RestoEditProfileComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditRestoComponent);
+    fixture = TestBed.createComponent(RestoEditProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
