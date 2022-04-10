@@ -4,7 +4,10 @@ import { AccueilComponent } from './pages/accueil/accueil.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RestoAccueilComponent } from './pages/resto/resto-accueil/resto-accueil.component';
+import { RestoListeCommandeComponent } from './pages/resto/resto-liste-commande/resto-liste-commande.component';
+import { RestoListePlatComponent } from './pages/resto/resto-liste-plat/resto-liste-plat.component';
 import { RestoLogInComponent } from './pages/resto/resto-log-in/resto-log-in.component';
+import { RestoNouveauPlatComponent } from './pages/resto/resto-nouveau-plat/resto-nouveau-plat.component';
 import { RestoProfileComponent } from './pages/resto/resto-profile/resto-profile.component';
 import { RestoSignUpComponent } from './pages/resto/resto-sign-up/resto-sign-up.component';
 import { RestoComponent } from './pages/resto/resto.component';
@@ -33,6 +36,18 @@ const routes: Routes = [{
 		path: 'profile',
 		component: RestoProfileComponent,
 		canActivate: [RestoAuthGuardService]
+	},{
+		path:'plat/new',
+		component:RestoNouveauPlatComponent,
+		canActivate:[RestoAuthGuardService]
+	},{
+		path:'plats',
+		component:RestoListePlatComponent,
+		canActivate:[RestoAuthGuardService]
+	},{
+		path:'commandes',
+		component:RestoListeCommandeComponent,
+		canActivate:[RestoAuthGuardService]
 	}]
 },{
 	path:'error',

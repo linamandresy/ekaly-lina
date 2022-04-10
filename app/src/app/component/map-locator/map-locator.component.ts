@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Feature, Map, View } from 'ol';
 import { Point } from 'ol/geom';
 import TileLayer from 'ol/layer/Tile';
@@ -18,39 +18,52 @@ import { toSize } from 'ol/size';
 export class MapLocatorComponent implements OnInit {
 	map: Map | undefined;
 	placeName: string = '';
+	@Input()
+	childId:string='map-ol';
+	@Input()
 	localisation: { longitude: number, latitude: number, placename: string } = { longitude: 0, latitude: 0, placename: this.placeName };
 	displayMap: boolean = false;
+	@Input()
+	searching: boolean = true;
 
 	@Output()
-	geolocalisation:EventEmitter<{ longitude: number, latitude: number, placename: string }>=new EventEmitter();
+	geolocalisation: EventEmitter<{ longitude: number, latitude: number, placename: string }> = new EventEmitter();
 	constructor(
 		private positionStack: PositionStackService
 	) { }
 	ngOnInit(): void {
 	}
-	showMap() {
+	async showMap() {
 		this.displayMap = true;
-		this.positionStack.search(this.placeName).subscribe(
-			(data: any) => {
-				this.localisation.latitude = data.data[0].latitude;
-				this.localisation.longitude = data.data[0].longitude;
-				this.localisation.placename = this.placeName;
-				this.initializeMap();
-			}, (error) => {
-				navigator.geolocation.getCurrentPosition((position) => {
-					this.localisation = {
-						longitude: position.coords.longitude,
-						latitude: position.coords.latitude,
-						placename: this.placeName
-					};
+		if (this.searching) {
+			this.positionStack.search(this.placeName).subscribe(
+				(data: any) => {
+					this.localisation.latitude = data.data[0].latitude;
+					this.localisation.longitude = data.data[0].longitude;
+					this.localisation.placename = this.placeName;
 					this.initializeMap();
+				}, (error) => {
+					navigator.geolocation.getCurrentPosition((position) => {
+						this.localisation = {
+							longitude: position.coords.longitude,
+							latitude: position.coords.latitude,
+							placename: this.placeName
+						};
+						this.initializeMap();
+					});
+				}
+			);
 
-				});
-			}
-		);
+		}else{
+			this.initializeMap();
+		}
 	}
-	initializeMap():void{
-		if (this.map) this.map.dispose();
+	async initializeMap() {
+		const delay = (ms: number) => {
+			return new Promise( resolve => setTimeout(resolve, ms) );
+		}
+		if(!this.searching)	await delay(500);
+		if (this.map) await this.map.dispose();
 		const iconFeature = new Feature({
 			geometry: new Point(fromLonLat([
 				this.localisation.longitude,
@@ -83,15 +96,18 @@ export class MapLocatorComponent implements OnInit {
 					})
 				})
 			],
-			target: 'map-ol'
+			target: this.childId
 		});
-		this.geolocalisation.emit(this.localisation);
-		this.map.on('singleclick', (evt)=> {
-			let coords = (transform(evt.coordinate, 'EPSG:3857', 'EPSG:4326'));
-			console.log(coords);
-			this.localisation.longitude = coords[0];
-			this.localisation.latitude = coords[1];
-			this.initializeMap();
-		});
+		if(this.searching){
+			
+			this.geolocalisation.emit(this.localisation);
+			this.map.on('singleclick', (evt) => {
+				let coords = (transform(evt.coordinate, 'EPSG:3857', 'EPSG:4326'));
+				console.log(coords);
+				this.localisation.longitude = coords[0];
+				this.localisation.latitude = coords[1];
+				this.initializeMap();
+			});
+		}
 	}
 }

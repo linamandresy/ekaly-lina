@@ -78,6 +78,7 @@ class RestoToken {
 				dbo.collection("restoToken").aggregate(pipeline).toArray((err,res)=>{
 					if(res.length!==1) reject(new Error("Token non valide"));
 					else resolve(res[0].resto[0]);
+					db.close();
 				});
 			}
 			executeDB(action);
@@ -86,9 +87,6 @@ class RestoToken {
 	static async isConnected(token){
 		try {
 			let data = await this.getRestoToken(token);
-			console.log("Token");
-			console.log(data);
-			console.log("Token");
 			return data!==undefined;
 		} catch (error) {
 			return false;

@@ -57,7 +57,6 @@ export class RestoEditProfileComponent implements OnInit {
 	initResto(): void {
 		this.restoProfileService.getResto().subscribe(
 			(data: any) => {
-				console.log(data);
 				if (data.ok) {
 					this.id = data.resto._id;
 					this.name = data.resto._name;

@@ -1,2 +1,3 @@
-<input type="text" class="form-control" [(ngModel)]="placeName"  placeholder="Nom du quartier" (change)="showMap()">
-<div id="map-ol" class="map-ol" *ngIf="displayMap"></div>
+<button class="btn btn-primary" *ngIf="!searching" (click)="showMap()">Voir la carte</button>
+<input type="text" class="form-control" [(ngModel)]="placeName"  placeholder="Nom du quartier" (change)="showMap()" *ngIf="searching"/>
+<div [id]="childId" class="map-ol" *ngIf="displayMap"></div>

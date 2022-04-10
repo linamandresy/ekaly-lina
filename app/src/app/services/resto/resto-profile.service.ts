@@ -25,7 +25,6 @@ export class RestoProfileService {
 				Authorization: `Bearer ${sessionStorage.getItem('resto-token')}`
 			}
 		};
-		console.log(options);
 		return this.http.get(`${environment.baseUrl}/api/resto/connected`, options);
 	}
 

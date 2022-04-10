@@ -31,6 +31,9 @@ import { ImageUploaderComponent } from './component/image-uploader/image-uploade
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { RestoEditProfileComponent } from './pages/resto/component/resto-edit-profile/resto-edit-profile.component';
 import { MapLocatorComponent } from './component/map-locator/map-locator.component';
+import { RestoNouveauPlatComponent } from './pages/resto/resto-nouveau-plat/resto-nouveau-plat.component';
+import { RestoListePlatComponent } from './pages/resto/resto-liste-plat/resto-liste-plat.component';
+import { RestoListeCommandeComponent } from './pages/resto/resto-liste-commande/resto-liste-commande.component';
 
 @NgModule({
 	declarations: [
@@ -49,6 +52,9 @@ import { MapLocatorComponent } from './component/map-locator/map-locator.compone
 		ImageUploaderComponent,
 		RestoEditProfileComponent,
 		MapLocatorComponent,
+  RestoNouveauPlatComponent,
+  RestoListePlatComponent,
+  RestoListeCommandeComponent,
 	],
 	imports: [
 		BrowserModule,
