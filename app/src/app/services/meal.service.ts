@@ -32,4 +32,13 @@ export class MealService {
 
 		return this.http.post(`${environment.baseUrl}/api/meal`,data,options);
 	}
+
+	getMeals(){
+		const options = {
+			headers:{
+				Authorization:`Bearer ${sessionStorage.getItem('resto-token')}`
+			}
+		};
+		return this.http.get(`${environment.baseUrl}/api/meal`,options);
+	}
 }

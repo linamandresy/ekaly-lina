@@ -16,7 +16,7 @@ E-Kaly :
 			✔ Connection du restaurant @started(22-04-02 14:54) @done(22-04-05 10:32) @lasted(2d19h38m12s)
 			✔ Navigation et design Restaurant @started(22-04-06 23:32) @done(22-04-09 21:31) @lasted(2d21h59m19s)
 			✔ Edition de profile @started(22-04-10 15:50) @done(22-04-10 17:47) @lasted(1h57m29s)
-			- Voir la liste des commandes à préparer @started(22-04-10 17:47)
+			- Voir la liste des commandes à préparer
 			✘ Valider les paiement @cancelled(22-04-10 15:48)
 			Edition de la page du restaurant :
 				✔ 1 photo de profile @started(22-04-07 18:55) @done(22-04-09 21:31) @lasted(2d2h36m23s)
@@ -31,7 +31,7 @@ E-Kaly :
 				✔ 1 nom de plat @started(22-04-10 17:47) @done(22-04-10 20:45) @lasted(2h58m37s)
 				✔ 1 description moins de 500 caractere @started(22-04-10 17:47) @done(22-04-10 20:45) @lasted(2h58m37s)
 				✔ 1 prix en ariary @started(22-04-10 17:47) @done(22-04-10 20:45) @lasted(2h58m37s)
-			- Voir la liste des plats @started(22-04-10 20:46)
+			✔ Voir la liste des plats @started(22-04-10 20:46) @done(22-04-10 21:38) @lasted(52m23s)
 			✘ Voir la fiche des plats avec commentaires @started(22-04-06 23:35) @cancelled(22-04-07 18:55) @wasted(19h20m35s)
 			✘ Liste des commandes prêt à être livrée @started(22-04-06 23:35) @cancelled(22-04-07 18:55) @wasted(19h20m36s)
 			✘ Imprimer QR Code de livraison à mettre sur le paquet @started(22-04-06 23:35) @cancelled(22-04-07 18:55) @wasted(19h20m37s)

@@ -58,6 +58,47 @@ class Meal{
 		}
 		executeDB(action);
 	}
+
+	static getMealsByToken(token){
+		return new Promise(async (resolve,reject)=>{
+			const action = (error, db) => {
+				if (error) throw error;
+				let dbo = db.db(configDB.database);
+				let crt ={
+					_token : token,
+					_expirationDate:{$gt:new Date(new Date(Date.now()).getTime())}
+				};
+				let pipeline = [{
+						$match:crt
+					},{
+						$lookup:{
+							from:'resto',
+							localField:'_idResto',
+							foreignField:'_id',
+							as:'resto',
+							pipeline:[{
+									$lookup:{
+										from:'meal',
+										localField:'_id',
+										foreignField:'_restoId',
+										as:'meals'
+									}
+							}]
+						}
+					}
+				];
+
+				dbo.collection("restoToken").aggregate(pipeline).toArray((err,res)=>{
+					if(res.length!==1) reject(new Error("Token non valide"));
+					else {
+						resolve(res[0].resto[0].meals);
+					}
+					db.close();
+				});
+			}
+			executeDB(action);
+		});
+	}
 }
 
 module.exports=Meal;
