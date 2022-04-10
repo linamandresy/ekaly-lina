@@ -34,6 +34,8 @@ import { MapLocatorComponent } from './component/map-locator/map-locator.compone
 import { RestoNouveauPlatComponent } from './pages/resto/resto-nouveau-plat/resto-nouveau-plat.component';
 import { RestoListePlatComponent } from './pages/resto/resto-liste-plat/resto-liste-plat.component';
 import { RestoListeCommandeComponent } from './pages/resto/resto-liste-commande/resto-liste-commande.component';
+import { HeadersNavComponent } from './component/headers-nav/headers-nav.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 @NgModule({
 	declarations: [
@@ -55,6 +57,8 @@ import { RestoListeCommandeComponent } from './pages/resto/resto-liste-commande/
   RestoNouveauPlatComponent,
   RestoListePlatComponent,
   RestoListeCommandeComponent,
+  HeadersNavComponent,
+  FooterComponent,
 	],
 	imports: [
 		BrowserModule,

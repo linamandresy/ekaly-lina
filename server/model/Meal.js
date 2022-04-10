@@ -59,6 +59,21 @@ class Meal{
 		executeDB(action);
 	}
 
+	static getMeals(){
+		return new Promise((resolve,reject)=>{
+			const action = (error,db)=>{
+				if(error) reject(error);
+				else{
+					let dbo = db.db(configDB.database);
+					dbo.collection("meal").find({}).toArray((err,res)=>{
+						resolve(res);
+						db.close();
+					});
+				}
+			}
+			executeDB(action);
+		});
+	}
 	static getMealsByToken(token){
 		return new Promise(async (resolve,reject)=>{
 			const action = (error, db) => {

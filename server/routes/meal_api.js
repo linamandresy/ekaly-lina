@@ -4,6 +4,15 @@ const router = express.Router();
 const RestoToken = require("../model/RestoToken");
 const Meal = require("../model/Meal");
 
+router.get('/all',async (req,res,next)=>{
+	try {
+		let  data = await Meal.getMeals();
+		res.send({ok:true,meals:data});
+	} catch (error) {
+		res.send({ ok: false, message: error.message });
+	}
+});
+
 router.post('/', async (req, res, next) => {
 	try {
 		let token = req.headers.authorization.substring(7);

@@ -41,4 +41,7 @@ export class MealService {
 		};
 		return this.http.get(`${environment.baseUrl}/api/meal`,options);
 	}
+	getAllMeals(){
+		return this.http.get(`${environment.baseUrl}/api/meal/all`);
+	}
 }
