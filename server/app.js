@@ -8,6 +8,7 @@ var fileupload = require("express-fileupload");
 
 var indexRouter = require('./routes/index');
 var restoApiRouter = require("./routes/resto_api");
+var mealApiRouter = require("./routes/meal_api");
 var uploaderApi = require("./routes/uploader_api");
 var app = express();
 
@@ -28,6 +29,7 @@ app.use(fileupload({
 }))
 
 app.use("/api/resto",restoApiRouter);
+app.use('/api/meal',mealApiRouter);
 app.use('/api/file-upload',uploaderApi);
 app.use('/**', indexRouter);
 

@@ -20,7 +20,6 @@ router.put('/:id', async (req, res, next) => {
 router.post("/login", async (req, res, next) => {
 
 	try {
-		console.log(req.body);
 		let resto = new Resto(req.body);
 		let token = await resto.login();
 		console.log(token);
@@ -32,7 +31,6 @@ router.post("/login", async (req, res, next) => {
 
 router.post("/signup", async (req, res, next) => {
 	try {
-
 		let resto = new Resto(req.body);
 		await resto.signup();
 		let token = await resto.login();

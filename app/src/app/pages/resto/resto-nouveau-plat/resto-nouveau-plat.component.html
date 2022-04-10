@@ -1,1 +1,78 @@
-<p>resto-nouveau-plat works!</p>
+<section class="content">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">Images</h3>
+				</div>
+				<div class="card-body">
+					<div class="row">
+					  <div class="col-12 col-sm-6">
+						<div class="col-12">
+						  <img [src]="mainImage" class="product-image" alt="Product Image">
+						</div>
+						<div class="col-12 product-image-thumbs">
+						  <div class="product-image-thumb" *ngFor="let img of secondaryImage"><img [src]="img" alt="Product Image"></div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				<!-- /.card-body -->
+			</div>
+			<!-- /.card -->
+		</div>
+		<div class="col-md-6">
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">Information</h3>
+				</div>
+				<div class="card-body">
+					<div class="form-group">
+						<label for="inputName">Nom du plat</label>
+						<input type="text" id="inputName" class="form-control" [(ngModel)]="name" />
+					</div>
+					<div class="form-group">
+						<label for="inputName">Prix</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">MGA</span>
+							</div>
+							<input type="number" class="form-control" [(ngModel)]="price" />
+							<div class="input-group-append">
+								<span class="input-group-text">.00</span>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="inputMessage">Description</label>
+						<textarea id="inputMessage" class="form-control" rows="4" [(ngModel)]="description"></textarea>
+					</div>
+					<div class="form-group row">
+						<label for="profile-picture" class="col-sm-3 col-form-label">Photo de principale</label>
+						<div class="col-sm-3">
+							<app-image-uploader [isMultiple]="false" (urls)="getMainImage($event)"></app-image-uploader>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label for="description" class="col-sm-3 col-form-label">Photo d'illustration(s)</label>
+						<div class="col-sm-9">
+							<app-image-uploader [isMultiple]="true" (urls)="getSecondaryImage($event)">
+							</app-image-uploader>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<button class="btn btn-primary" (click)="saveMeal()" [disabled]="!hideLoader">Enregistrer</button>
+						<mat-spinner *ngIf="!hideLoader" diameter="30"></mat-spinner>
+					</div>
+
+				</div>
+				<!-- /.card-body -->
+			</div>
+			<!-- /.card -->
+		</div>
+	</div>
+</section>
