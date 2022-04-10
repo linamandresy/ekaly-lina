@@ -26,7 +26,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { RestoHeaderComponent } from './pages/resto/component/resto-header/resto-header.component';
 import { RestoNavSideComponent } from './pages/resto/component/resto-nav-side/resto-nav-side.component';
 import { MatMenuModule } from '@angular/material/menu';
-import { EditRestoComponent } from './pages/resto/edit-resto/edit-resto.component';
+import { RestoProfileComponent } from './pages/resto/resto-profile/resto-profile.component';
+import { ImageUploaderComponent } from './component/image-uploader/image-uploader.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { RestoEditProfileComponent } from './pages/resto/component/resto-edit-profile/resto-edit-profile.component';
+import { MapLocatorComponent } from './component/map-locator/map-locator.component';
+import { RestoNouveauPlatComponent } from './pages/resto/resto-nouveau-plat/resto-nouveau-plat.component';
+import { RestoListePlatComponent } from './pages/resto/resto-liste-plat/resto-liste-plat.component';
+import { RestoListeCommandeComponent } from './pages/resto/resto-liste-commande/resto-liste-commande.component';
 
 @NgModule({
 	declarations: [
@@ -41,7 +48,13 @@ import { EditRestoComponent } from './pages/resto/edit-resto/edit-resto.componen
 		RestoComponent,
 		RestoHeaderComponent,
 		RestoNavSideComponent,
-  EditRestoComponent
+		RestoProfileComponent,
+		ImageUploaderComponent,
+		RestoEditProfileComponent,
+		MapLocatorComponent,
+  RestoNouveauPlatComponent,
+  RestoListePlatComponent,
+  RestoListeCommandeComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -50,6 +63,7 @@ import { EditRestoComponent } from './pages/resto/edit-resto/edit-resto.componen
 		FormsModule,
 		ReactiveFormsModule,
 		HttpClientModule,
+		NgxDropzoneModule,
 		MatCardModule,
 		MatDividerModule,
 		MatButtonModule,

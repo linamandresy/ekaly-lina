@@ -8,6 +8,7 @@ import { RestoSignupService } from 'src/app/services/resto/resto-signup.service'
 	styleUrls: ['./resto-sign-up.component.scss']
 })
 export class RestoSignUpComponent implements OnInit {
+	hideLoader:boolean=true;
 	hide: boolean = true;
 	name:string='';
 	email:string='';
@@ -22,12 +23,14 @@ export class RestoSignUpComponent implements OnInit {
 	}
 
 	signup():void{
+		this.hideLoader=false;
 		this.signupService.signup(this.name,this.email,this.password).subscribe(
 			(data)=>{
 				if(data.ok){
 					sessionStorage.setItem("resto-token",data.token);
-					this.router.navigate(['/resto/accueil']);
+					window.location.href='/resto/accueil';
 				}else{
+					this.hideLoader=true;
 					this.error = data.error;
 				}
 			},(error)=>{

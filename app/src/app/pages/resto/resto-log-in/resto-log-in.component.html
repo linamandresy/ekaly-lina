@@ -3,6 +3,7 @@
 	<mat-card class="login-card">
 		<mat-card-header class="login-header">
 			<mat-card-title>Connexion de restaurant</mat-card-title>
+			<mat-spinner *ngIf="!hideLoader" diameter="30"></mat-spinner>
 		</mat-card-header>
 		<mat-divider inset></mat-divider>
 		<mat-card-content class="login-form">
@@ -24,7 +25,9 @@
 			</div>
 		</mat-card-content>
 		<mat-card-actions>
-			<button mat-raised-button class="login-button" (click)="login()">Se Connecter</button>
+			<button mat-raised-button class="login-button" (click)="login()" [disabled]="!hideLoader" [ngClass]="!hideLoader?'disabled':''">
+				Se Connecter
+			</button>
 			<br/>
 		</mat-card-actions>
 		<small>

@@ -9,6 +9,7 @@ import { RestoLoginService } from 'src/app/services/resto/resto-login.service';
 })
 export class RestoLogInComponent implements OnInit {
 
+	hideLoader:boolean=true;
 	hide:boolean=true;
 	email:string='';
 	password:string='';
@@ -21,12 +22,14 @@ export class RestoLogInComponent implements OnInit {
 	ngOnInit(): void {
 	}
 	login():void {
+		this.hideLoader=false;
 		this.loginService.login(this.email,this.password).subscribe(
 			(data)=>{
 				if(data.ok){
 					sessionStorage.setItem("resto-token",data.token);
-					this.router.navigate(['/resto/accueil'])
+					window.location.href=`/resto/accueil`;
 				}else{
+					this.hideLoader=true;
 					this.error=data.error;
 				}
 			},(error)=>{
