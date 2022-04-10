@@ -15,8 +15,9 @@ E-Kaly :
 			✔ Inscrire le restaurant sur le site @started(22-04-02 23:08) @done(22-04-05 10:32) @lasted(2d11h24m11s)
 			✔ Connection du restaurant @started(22-04-02 14:54) @done(22-04-05 10:32) @lasted(2d19h38m12s)
 			✔ Navigation et design Restaurant @started(22-04-06 23:32) @done(22-04-09 21:31) @lasted(2d21h59m19s)
+			- Edition de profile
 			- Voir la liste des commandes à préparer
-			- Valider les paiement 
+			✘ Valider les paiement @cancelled(22-04-10 15:48)
 			Edition de la page du restaurant :
 				✔ 1 photo de profile @started(22-04-07 18:55) @done(22-04-09 21:31) @lasted(2d2h36m23s)
 				✔ 1 photo de couverture @started(22-04-07 18:55) @done(22-04-09 21:31) @lasted(2d2h36m24s)

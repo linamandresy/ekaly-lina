@@ -1,37 +1,32 @@
-<form class="form-horizontal">
 	<div class="form-group row">
 		<label for="inputName" class="col-sm-2 col-form-label">Nom du restaurant</label>
 		<div class="col-sm-10">
-			<input type="email" class="form-control" id="inputName" placeholder="Name">
+			<input type="email" class="form-control"  placeholder="Nom du restaurant" [(ngModel)]="name">
 		</div>
 	</div>
 	<div class="form-group row">
 		<label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
 		<div class="col-sm-10">
-			<input type="email" class="form-control" id="inputEmail" placeholder="Email" disabled value="mandrseyrab@gmail.com">
+			<input type="email" class="form-control" id="inputEmail" placeholder="Email" disabled value="mandrseyrab@gmail.com" [(ngModel)]="email">
 		</div>
 	</div>
 	<div class="form-group row">
 		<label for="inputName2" class="col-sm-2 col-form-label">Numéro MVola</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" id="inputName2" placeholder="(+261) 34 XX XXX XX">
+			<input type="text" class="form-control" id="inputName2" placeholder="(+261) 34 XX XXX XX" [(ngModel)]="phone">
 		</div>
 	</div>
 	<div class="form-group row">
 		<label for="inputExperience" class="col-sm-2 col-form-label">Description</label>
 		<div class="col-sm-10">
-			<textarea class="form-control" id="inputExperience" placeholder="Description du restaurant"></textarea>
+			<textarea class="form-control" id="inputExperience" placeholder="Description du restaurant" [(ngModel)]="description"></textarea>
 		</div>
 	</div>
 	<div class="form-group row">
 		<label for="inputSkills" class="col-sm-2 col-form-label">Catégorie</label>
 		<div class="col-sm-10">
-			<select class="form-control">
-				<option value="1">Malagasy</option>
-				<option value="1">Chinois</option>
-				<option value="1">Fast Food</option>
-				<option value="1">Tropical</option>
-				<option value="1">Luxe</option>
+			<select class="form-control" [(ngModel)]="categoryId">
+				<option *ngFor="let category of categories" [value]="category._id" [selected]="category._id==categoryId">{{category.category}}</option>
 			</select>
 		</div>
 	</div>
@@ -52,13 +47,12 @@
 	<div class="form-group row">
 		<label for="description" class="col-sm-2 col-form-label">Localisations</label>
 		<div class="col-sm-10">
-			<app-map-locator></app-map-locator>
+			<app-map-locator (geolocalisation)="getGeoLocalisation($event)"></app-map-locator>
 		</div>
 	</div>
 
 	<div class="form-group row">
 		<div class="offset-sm-2 col-sm-10">
-			<button type="submit" class="btn btn-danger">Submit</button>
+			<button type="submit" class="btn btn-danger" (click)="updateProfile()" [disabled]="!hideLoader">Submit</button><mat-spinner *ngIf="!hideLoader" diameter="30"></mat-spinner>
 		</div>
 	</div>
-</form>

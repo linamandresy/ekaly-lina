@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './pages/accueil/accueil.component';
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RestoAccueilComponent } from './pages/resto/resto-accueil/resto-accueil.component';
 import { RestoLogInComponent } from './pages/resto/resto-log-in/resto-log-in.component';
@@ -33,7 +34,10 @@ const routes: Routes = [{
 		component: RestoProfileComponent,
 		canActivate: [RestoAuthGuardService]
 	}]
-}, {
+},{
+	path:'error',
+	component:ErrorPageComponent
+},{
 	path: '**',
 	redirectTo: '/accueil'
 }];

@@ -1,1 +1,1 @@
-db.users.createIndex({"_email":1},{unique:true});
+db.resto.createIndex({"_email":1},{unique:true});
