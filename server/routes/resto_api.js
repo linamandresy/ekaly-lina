@@ -4,6 +4,15 @@ const router = express.Router();
 const Resto = require('../model/Resto');
 const RestoToken = require("../model/RestoToken");
 
+router.get('/all',async (req,res,next)=>{
+	try {
+		let data = await Resto.getResto();
+		res.send({ok:true,resto:data});
+	} catch (error) {
+		res.send({ ok: false, error: error.message });		
+	}
+});
+
 router.put('/:id', async (req, res, next) => {
 	try {
 		let token = req.headers.authorization.substring(7);
@@ -12,7 +21,6 @@ router.put('/:id', async (req, res, next) => {
 		await resto.update();
 		res.send({ok:true,message:"Profil mis à jour"});
 	} catch (error) {
-		console.log(error);
 		res.send({ ok: false, error: error.message });
 	}
 });
@@ -20,7 +28,6 @@ router.put('/:id', async (req, res, next) => {
 router.post("/login", async (req, res, next) => {
 
 	try {
-		console.log(req.body);
 		let resto = new Resto(req.body);
 		let token = await resto.login();
 		console.log(token);
@@ -32,7 +39,6 @@ router.post("/login", async (req, res, next) => {
 
 router.post("/signup", async (req, res, next) => {
 	try {
-
 		let resto = new Resto(req.body);
 		await resto.signup();
 		let token = await resto.login();

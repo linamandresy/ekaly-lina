@@ -35,6 +35,9 @@
             ],
             "styles": [
               "src/styles.scss",
+			  "src/assets/css/bootstrap.min.css",
+			  "src/assets/css/style.css",
+			  "src/assets/css/responsive.css",
 			  "node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css",
 			  "node_modules/admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css",
 			  "node_modules/admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css",
@@ -45,8 +48,18 @@
 			  "node_modules/admin-lte/plugins/summernote/summernote-bs4.min.css",
 			  "node_modules/admin-lte/plugins/dropzone/min/dropzone.min.css",
 			  "node_modules/ol/ol.css"
+		 
             ],
             "scripts": [
+				"src/assets/js/vendor/jquery-3.3.1.min.js",
+				"src/assets/js/vendor/modernizr-3.6.0.min.js",
+				"src/assets/js/vendor/jquery.cookie.js",
+				"src/assets/js/vendor/wow.min.js",
+				"src/assets/js/bootstrap.min.js",
+				"src/assets/js/plugins.js",
+				"src/assets/js/popper.min.js",
+				"src/assets/js/lazysizes.js",
+				"src/assets/js/main.js",
 				"node_modules/admin-lte/plugins/jquery/jquery.min.js",
 				"node_modules/admin-lte/plugins/jquery-ui/jquery-ui.min.js",
 				"node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js",

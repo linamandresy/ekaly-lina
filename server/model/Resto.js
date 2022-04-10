@@ -155,6 +155,21 @@ class Resto {
 			executeDB(action);
 		});
 	}
+	static getResto(){
+		return new Promise((resolve,reject)=>{
+			const action = (error,db)=>{
+				if(error) reject(error);
+				else{
+					let dbo = db.db(configDB.database);
+					dbo.collection("resto").find({}).toArray((err,res)=>{
+						resolve(res);
+						db.close();
+					});
+				}
+			}
+			executeDB(action);
+		});
+	}
 }
 
 module.exports = Resto;
