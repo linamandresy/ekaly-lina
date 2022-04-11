@@ -19,7 +19,7 @@ class Meal{
 		return this._name;
 	}
 	set price(value){
-		if(price<0) throw new Error("Prix négative");
+		if(value<0) throw new Error("Prix négative");
 		this._price=value;
 	}
 	get price(){

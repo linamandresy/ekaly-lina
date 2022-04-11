@@ -38,6 +38,8 @@ import { HeadersNavComponent } from './component/headers-nav/headers-nav.compone
 import { FooterComponent } from './component/footer/footer.component';
 import { PlatsComponent } from './pages/plats/plats.component';
 import { RestaurantsComponent } from './pages/restaurants/restaurants.component';
+import { ListeCommandesComponent } from './pages/commandes/liste-commandes/liste-commandes.component';
+import { NewCommandesComponent } from './pages/commandes/new-commandes/new-commandes.component';
 
 @NgModule({
 	declarations: [
@@ -63,6 +65,8 @@ import { RestaurantsComponent } from './pages/restaurants/restaurants.component'
   FooterComponent,
   PlatsComponent,
   RestaurantsComponent,
+  ListeCommandesComponent,
+  NewCommandesComponent,
 	],
 	imports: [
 		BrowserModule,

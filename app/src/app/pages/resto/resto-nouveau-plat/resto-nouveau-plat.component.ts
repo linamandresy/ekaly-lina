@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MealService } from 'src/app/services/meal.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class RestoNouveauPlatComponent implements OnInit {
 
 	hideLoader:boolean=true;
 	constructor(
-		private mealService:MealService
+		private mealService:MealService,
+		private router : Router
 	) { }
 
 	ngOnInit(): void {
@@ -32,10 +34,11 @@ export class RestoNouveauPlatComponent implements OnInit {
 		this.hideLoader=false;
 		this.mealService.saveMeal(this.name,this.price,this.description,this.mainImage,this.secondaryImage).subscribe(
 			(data:any)=>{
+				console.log(data);
 				if(data.ok)
 					window.location.href='/resto/plats';
 				else
-					window.location.href='/error';
+					this.router.navigateByUrl('/error');
 			},
 			(error:any)=>{
 				window.location.href='/error';

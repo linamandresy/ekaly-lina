@@ -7,7 +7,7 @@ const RestoToken = require("./RestoToken");
 const emailValidator = require("email-validator");
 class Resto {
 
-	constructor({ id, name, email, phone, profilePicture, description, categoryId = "62527197aa0aad153873d2f7", localisation, illustrations, password }) {
+	constructor({ id, name, email, phone, profilePicture, description, categoryId = "62544532bdf8cc2f6ffc7156", localisation, illustrations, password }) {
 		this._id = id;
 		this.name = name;
 		this.email = email;
