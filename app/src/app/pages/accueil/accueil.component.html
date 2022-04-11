@@ -1,6 +1,5 @@
 <app-headers-nav></app-headers-nav>
 <div id="page-content">
-	<!--Home slider-->
 	<div class="slideshow slideshow-wrapper pb-section">
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
@@ -49,100 +48,9 @@
 			</a>
 		</div>
 	</div>
-	<!--End Home slider-->
-	<!--Weekly Bestseller-->
 
-	<!--End Parallax Section-->
-	<!--New Arrivals-->
-	<div class="product-rows section">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="section-header text-center">
-						<h2 class="h2">Nos plats</h2>
-						<p>Commandez et faites livrer chez vous</p>
-					</div>
-				</div>
-			</div>
-			<div class="grid-products">
-				<div class="row">
-					<div class="col-6 col-sm-2 col-md-3 col-lg-3 item" *ngFor="let item of plat">
-						<!-- start product image -->
-						<div class="product-image">
-							<!-- start product image -->
-							<a href="product-layout-1.html" class="grid-view-item__link">
-								<!-- image -->
-								<img class="primary blur-up lazyload"
-									[src]="item._mainImage" alt="image" title="product">
-								<!-- End image -->
-								<!-- Hover image -->
-								<img class="hover blur-up lazyload"
-									[src]="item._mainImage" alt="image" title="product">
-								<!-- End hover image -->
-								<!-- Variant Image-->
-								<img class="grid-view-item__image hover variantImg"
-								[src]="item._mainImage" alt="image" title="product">
-								<!-- Variant Image-->
-								<!-- product label -->
-								<!-- End product label -->
-							</a>
-							<!-- end product image -->
+	<app-list-all-plat></app-list-all-plat>
 
-							<!-- countdown start -->
-							<div class="saleTime desktop" data-countdown="2022/03/01"></div>
-							<!-- countdown end -->
-
-							<!-- Start product button -->
-							<form class="variants add" action="#" onclick="window.location.href='cart.html'"
-								method="post">
-								<button class="btn btn-addto-cart" type="button" tabindex="0">Commander</button>
-							</form>
-							<div class="button-set">
-								<a href="javascript:void(0)" title="Quick View" class="quick-view-popup quick-view"
-									data-toggle="modal" data-target="#content_quickview">
-									<i class="icon anm anm-search-plus-r"></i>
-								</a>
-								<div class="wishlist-btn">
-									<a class="wishlist add-to-wishlist" href="wishlist.html">
-										<i class="icon anm anm-heart-l"></i>
-									</a>
-								</div>
-								<div class="compare-btn">
-									<a class="compare add-to-compare" href="compare.html" title="Add to Compare">
-										<i class="icon anm anm-random-r"></i>
-									</a>
-								</div>
-							</div>
-							<!-- end product button -->
-						</div>
-						<!-- end product image -->
-						<!--start product details -->
-						<div class="product-details text-center">
-							<!-- product name -->
-							<div class="product-name">
-								<a href="product-layout-1.html">{{item._name}}</a>
-							</div>
-							<!-- End product name -->
-							<!-- product price -->
-							<div class="product-price">
-								<span class="price">MGA {{item._price |number:'4.1-5'}}</span>
-							</div>
-							<!-- End product price -->
-						</div>
-						<!-- End product details -->
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
-						<a href="/plats" class="btn">View all</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--End Featured Product-->
-
-	<!--Logo Slider-->
 	<div class="section logo-section">
 		<div class="container">
 			<div class="row">

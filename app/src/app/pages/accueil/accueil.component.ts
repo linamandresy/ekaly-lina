@@ -8,26 +8,13 @@ import { RestoService } from 'src/app/services/resto.service';
 	styleUrls: ['./accueil.component.scss']
 })
 export class AccueilComponent implements OnInit {
-	plat: Array<any> = [];
 	resto: Array<any> = [];
 	constructor(
-		private mealService: MealService,
 		private restoService: RestoService
 	) { }
 
 	ngOnInit(): void {
-		this.mealService.getAllMeals().subscribe(
-			(data: any) => {
-				console.log(data.meals);
-				if (data.ok) {
-					this.plat = data.meals;
-				} else {
-					window.location.href = '/error';
-				}
-			}, (error) => {
-				window.location.href = '/error';
-			}
-		);
+	
 		this.restoService.getAllResto().subscribe(
 			(data: any) => {
 				console.log(data.resto);
@@ -39,7 +26,8 @@ export class AccueilComponent implements OnInit {
 			}, (error) => {
 				window.location.href = '/error';
 			}
-		)
+		);
 	}
+
 
 }

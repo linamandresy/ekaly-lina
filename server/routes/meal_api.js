@@ -4,6 +4,17 @@ const router = express.Router();
 const RestoToken = require("../model/RestoToken");
 const Meal = require("../model/Meal");
 
+router.get('/info/:id',async (req,res,next)=>{
+	try {
+		let id = req.params.id;
+		let data = await Meal.getMealsById(id);
+		res.send({ok:true,meal:data});
+	} catch (error) {
+		console.log(error);
+		res.send({ ok: false, message: error.message });		
+	}
+});
+
 router.get('/all',async (req,res,next)=>{
 	try {
 		let data = await Meal.getMeals();

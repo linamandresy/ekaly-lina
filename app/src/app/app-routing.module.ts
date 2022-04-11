@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './pages/accueil/accueil.component';
+import { ListeCommandesComponent } from './pages/commandes/liste-commandes/liste-commandes.component';
+import { NewCommandesComponent } from './pages/commandes/new-commandes/new-commandes.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PlatsComponent } from './pages/plats/plats.component';
@@ -25,6 +27,12 @@ const routes: Routes = [{
 	path:'restaurants',
 	component:RestaurantsComponent
 } ,{
+	path:'new-command/:id',
+	component:NewCommandesComponent
+},{
+	path:'commands',
+	component:ListeCommandesComponent
+},{
 	path: 'login',
 	component: LoginComponent
 }, {
