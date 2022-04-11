@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { LoginComponent } from './pages/login/login.component';
+import { PlatsComponent } from './pages/plats/plats.component';
+import { RestaurantsComponent } from './pages/restaurants/restaurants.component';
 import { RestoAccueilComponent } from './pages/resto/resto-accueil/resto-accueil.component';
 import { RestoListeCommandeComponent } from './pages/resto/resto-liste-commande/resto-liste-commande.component';
 import { RestoListePlatComponent } from './pages/resto/resto-liste-plat/resto-liste-plat.component';
@@ -17,6 +19,12 @@ const routes: Routes = [{
 	path: 'accueil',
 	component: AccueilComponent
 }, {
+	path: 'plats',
+	component: PlatsComponent
+},{
+	path:'restaurants',
+	component:RestaurantsComponent
+} ,{
 	path: 'login',
 	component: LoginComponent
 }, {
@@ -36,23 +44,23 @@ const routes: Routes = [{
 		path: 'profile',
 		component: RestoProfileComponent,
 		canActivate: [RestoAuthGuardService]
-	},{
-		path:'plat/new',
-		component:RestoNouveauPlatComponent,
-		canActivate:[RestoAuthGuardService]
-	},{
-		path:'plats',
-		component:RestoListePlatComponent,
-		canActivate:[RestoAuthGuardService]
-	},{
-		path:'commandes',
-		component:RestoListeCommandeComponent,
-		canActivate:[RestoAuthGuardService]
+	}, {
+		path: 'plat/new',
+		component: RestoNouveauPlatComponent,
+		canActivate: [RestoAuthGuardService]
+	}, {
+		path: 'plats',
+		component: RestoListePlatComponent,
+		canActivate: [RestoAuthGuardService]
+	}, {
+		path: 'commandes',
+		component: RestoListeCommandeComponent,
+		canActivate: [RestoAuthGuardService]
 	}]
-},{
-	path:'error',
-	component:ErrorPageComponent
-},{
+}, {
+	path: 'error',
+	component: ErrorPageComponent
+}, {
 	path: '**',
 	redirectTo: '/accueil'
 }];
