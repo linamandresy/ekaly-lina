@@ -1,22 +1,22 @@
 E-Kaly :
 	Scenario utilisateur :
 		Client :
-			- Inscription 
-			- Login
-			- Choisir restaurant
-			- Choisir plat
-			- Passer Commande
-			- Choix du lieu de livraison (MAP)
-			- Paiement - Mobile Money - Manome Code de validation  (Plat + Livraison /km)
-			- Info livraison
-			- Marquer réception de plat via QR Code
-			- Commenter en noter un plat
+			- Inscription @started(22-04-11 08:04)
+			- Login @started(22-04-11 08:04)
+			✔ Choisir restaurant @started(22-04-11 08:04) @done(22-04-11 08:04) @lasted(58s)
+			✔ Choisir plat @started(22-04-11 08:04) @done(22-04-11 08:04) @lasted(57s)
+			- Passer Commande @started(22-04-11 08:05)
+			- Choix du lieu de livraison (MAP) @started(22-04-11 08:05)
+			✘ Paiement - Mobile Money - Manome Code de validation  (Plat + Livraison /km) @cancelled(22-04-11 08:05)
+			- Info livraison @started(22-04-11 08:05)
+			✘ Marquer réception de plat via QR Code @cancelled(22-04-11 08:05)
+			✘ Commenter en noter un plat @cancelled(22-04-11 08:05)
 		Restaurant:
 			✔ Inscrire le restaurant sur le site @started(22-04-02 23:08) @done(22-04-05 10:32) @lasted(2d11h24m11s)
 			✔ Connection du restaurant @started(22-04-02 14:54) @done(22-04-05 10:32) @lasted(2d19h38m12s)
 			✔ Navigation et design Restaurant @started(22-04-06 23:32) @done(22-04-09 21:31) @lasted(2d21h59m19s)
 			✔ Edition de profile @started(22-04-10 15:50) @done(22-04-10 17:47) @lasted(1h57m29s)
-			- Voir la liste des commandes à préparer
+			- Voir la liste des commandes à préparer @started(22-04-11 08:05)
 			✘ Valider les paiement @cancelled(22-04-10 15:48)
 			Edition de la page du restaurant :
 				✔ 1 photo de profile @started(22-04-07 18:55) @done(22-04-09 21:31) @lasted(2d2h36m23s)
@@ -39,32 +39,33 @@ E-Kaly :
 			- Voir les bénéfices du restaurant
 			- Prévisions des activités (Analyse de données)
 		Livreur:
-			- Se connecter
-			- Marquage de récuperation de panier
-			- Trajectoire sur Map
-			- Liste des plats à livrer
-			- Marquer réception de paquet via QR Code
-			- Marquer plat livré via QR Code
+			- Se connecter @started(22-04-11 08:05)
+			- Inscription @started(22-04-11 08:05)
+			✘ Marquage de récuperation de panier @cancelled(22-04-11 08:05)
+			✘ Trajectoire sur Map @cancelled(22-04-11 08:05)
+			- Liste des plats à livrer @started(22-04-11 08:06)
+			✘ Marquer réception de paquet via QR Code @cancelled(22-04-11 08:06)
+			✘ Marquer plat livré via QR Code @cancelled(22-04-11 08:06)
 		Responsable E-kaly:
-			- Voir la liste des commandes 
-			- Voir la liste des paiements à valider
+			- Voir la liste des commandes @started(22-04-11 08:06)
+			- Voir la liste des paiements à valider @started(22-04-11 08:06)
 			Gérer la configuration globale du site :
-				- Prix de livraison par KM
-				- Prix d'abonnement des restaurant
+				✘ Prix de livraison par KM @cancelled(22-04-11 08:06)
+				✘ Prix d'abonnement des restaurant @cancelled(22-04-11 08:06)
 			Gérer tiers :
 				Restaurant :
-					- Gestion des abonnements des restaurants
-					- Liste des restaurant à envoyer email de facturation
-					- Envoi d'email de facturation 
-					- Fiche de restaurant avec statistique d'activité
+					✘ Gestion des abonnements des restaurants @cancelled(22-04-11 08:06)
+					- Liste des restaurant à envoyer email de facturation @started(22-04-11 08:06)
+					- Envoi d'email de facturation @started(22-04-11 08:06)
+					✘ Fiche de restaurant avec statistique d'activité @cancelled(22-04-11 08:06)
 				Livreur :
-					- Liste des livreurs avec salaire à payer journalier
-					- Fiche des livreurs avec statistique d'activité
-					- Renvoi d'un livreur avec peu de performance
-					- Validation de reception de salaire
+					✘ Liste des livreurs avec salaire à payer journalier @cancelled(22-04-11 08:06)
+					✘ Fiche des livreurs avec statistique d'activité @cancelled(22-04-11 08:06)
+					✘ Renvoi d'un livreur avec peu de performance @cancelled(22-04-11 08:06)
+					✘ Validation de reception de salaire @cancelled(22-04-11 08:06)
 			Tableau de bord : 
-				- Chiffre d'affaire en temps réels
-				- Prévision d'activité par semaines
-				- Courbe d'evolution du chiffre d'affaire , du nombre de livreur , du nombre de restaurant
-				- Bénefice : Somme des Abonnements des restaurants + Somme des versement obligatoire des livreurs - Frais des livreurs
+				- Chiffre d'affaire en temps réels @started(22-04-11 08:06)
+				✘ Prévision d'activité par semaines @started(22-04-11 08:06) @cancelled(22-04-11 08:06) @wasted(1m)
+				- Courbe d'evolution du chiffre d'affaire , du nombre de livreur , du nombre de restaurant @started(22-04-11 08:07)
+				- Bénefice : Somme des Abonnements des restaurants + Somme des versement obligatoire des livreurs - Frais des livreurs @started(22-04-11 08:07)
 	

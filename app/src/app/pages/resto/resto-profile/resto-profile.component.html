@@ -42,9 +42,9 @@
 						
 						<hr>
 
-						<strong *ngIf="localisation!==undefined"><i class="fas fa-map-marker-alt mr-1"></i> Localisation</strong>
+						<strong *ngIf="localisation!==null"><i class="fas fa-map-marker-alt mr-1"></i> Localisation</strong>
 
-						<p class="text-muted"  *ngIf="localisation!==undefined">{{localisation.placename}}</p>
+						<p class="text-muted"  *ngIf="localisation!==null">{{localisation.placename}}</p>
 						
 						<hr>
 					</div>
