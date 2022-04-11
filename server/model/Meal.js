@@ -1,5 +1,6 @@
 "use strict";
 
+const { ObjectId } = require("mongodb");
 const configDB = require("../config/database.json");
 const executeDB = require("../database/MongoClient");
 
@@ -108,6 +109,38 @@ class Meal{
 					if(res.length!==1) reject(new Error("Token non valide"));
 					else {
 						resolve(res[0].resto[0].meals);
+					}
+					db.close();
+				});
+			}
+			executeDB(action);
+		});
+	}
+
+	static getMealsById(id){
+		return new Promise(async (resolve,reject)=>{
+			const action = (error, db) => {
+				if (error) throw error;
+				let dbo = db.db(configDB.database);
+				let crt ={
+					_id : new ObjectId(id)
+				};
+				let pipeline = [{
+						$match:crt
+					},{
+						$lookup:{
+							from:'resto',
+							localField:'_restoId',
+							foreignField:'_id',
+							as:'_resto',
+						}
+					}
+				];
+
+				dbo.collection("meal").aggregate(pipeline).toArray((err,res)=>{
+					if(!res || res.length===0) reject(new Error("Plat non trouvé"));
+					else {
+						resolve(res[0]);
 					}
 					db.close();
 				});

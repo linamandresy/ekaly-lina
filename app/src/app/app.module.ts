@@ -40,6 +40,7 @@ import { PlatsComponent } from './pages/plats/plats.component';
 import { RestaurantsComponent } from './pages/restaurants/restaurants.component';
 import { ListeCommandesComponent } from './pages/commandes/liste-commandes/liste-commandes.component';
 import { NewCommandesComponent } from './pages/commandes/new-commandes/new-commandes.component';
+import { ListAllPlatComponent } from './component/list-all-plat/list-all-plat.component';
 
 @NgModule({
 	declarations: [
@@ -67,6 +68,7 @@ import { NewCommandesComponent } from './pages/commandes/new-commandes/new-comma
   RestaurantsComponent,
   ListeCommandesComponent,
   NewCommandesComponent,
+  ListAllPlatComponent,
 	],
 	imports: [
 		BrowserModule,

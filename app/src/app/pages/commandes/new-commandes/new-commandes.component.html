@@ -1,1 +1,62 @@
-<p>new-commandes works!</p>
+<app-headers-nav></app-headers-nav>
+
+<div class="container">
+	<section class="content">
+
+		<!-- Default box -->
+		<div class="card card-solid">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-12 col-sm-6">
+						<h3 class="d-inline-block d-sm-none">{{name}}</h3>
+						<div class="col-12">
+							<img [src]="mainImage"
+								class="product-image" [alt]="name">
+						</div>
+					</div>
+					<div class="col-12 col-sm-6">
+						<h3 class="my-3">{{name}}</h3>
+						<p>{{description}}</p>
+
+						<hr>
+
+						<div class="bg-gray py-2 px-3 mt-4">
+							<h2 class="mb-0">
+								MGA {{price | number:'4.1-5'}}
+							</h2>
+						</div>
+
+						<div class="mt-4">
+							<div class="input-group">
+								<input type="number" class="form-control add-command" min="0" [(ngModel)]="qte">
+								<div class="input-group-append">
+									<div class="btn btn-dark btn-lg btn-flat">
+										<i class="fas fa-cart-plus fa-lg mr-2"></i>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<hr />
+						<div class="col-12 product-image-thumbs">
+							<div class="product-image-thumb" *ngFor="let src of secondaryImage"><img
+									[src]="src"
+									alt="Product Image"></div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+			<!-- /.card-body -->
+		</div>
+		<!-- /.card -->
+
+		<hr/>
+		<app-list-all-plat></app-list-all-plat>
+	</section>
+</div>
+
+
+<app-footer></app-footer>
