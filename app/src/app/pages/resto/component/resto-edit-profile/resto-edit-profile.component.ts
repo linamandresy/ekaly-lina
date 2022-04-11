@@ -57,6 +57,7 @@ export class RestoEditProfileComponent implements OnInit {
 	initResto(): void {
 		this.restoProfileService.getResto().subscribe(
 			(data: any) => {
+				console.log(data)
 				if (data.ok) {
 					this.id = data.resto._id;
 					this.name = data.resto._name;
@@ -65,7 +66,8 @@ export class RestoEditProfileComponent implements OnInit {
 					this.profilePicture = data.resto._profilePicture;
 					this.description = data.resto._description;
 					this.categoryId = data.resto._categoryId;
-					this.localisation = data.resto._localisation;
+					if(data.resto._localisation!=null)
+						this.localisation = data.resto._localisation;
 					this.illustrations = data.resto._illustrations;
 				} else {
 					this.router.navigateByUrl('/error');

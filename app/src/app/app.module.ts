@@ -36,6 +36,8 @@ import { RestoListePlatComponent } from './pages/resto/resto-liste-plat/resto-li
 import { RestoListeCommandeComponent } from './pages/resto/resto-liste-commande/resto-liste-commande.component';
 import { HeadersNavComponent } from './component/headers-nav/headers-nav.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { PlatsComponent } from './pages/plats/plats.component';
+import { RestaurantsComponent } from './pages/restaurants/restaurants.component';
 
 @NgModule({
 	declarations: [
@@ -59,6 +61,8 @@ import { FooterComponent } from './component/footer/footer.component';
   RestoListeCommandeComponent,
   HeadersNavComponent,
   FooterComponent,
+  PlatsComponent,
+  RestaurantsComponent,
 	],
 	imports: [
 		BrowserModule,
